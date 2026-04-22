@@ -12,6 +12,16 @@
   While Java provides many built-in utilities, I’ve chosen to implement classic structures manually to gain a deeper understanding of how they work internally.
 </p>
 
+<hr>
+
+<h2>🔍 Implemented Search Algorithms</h2>
+<ul>
+  <li><strong>Sequential Search</strong> – Iterates through the data one element at a time until the target is found.</li>
+  <li><strong>Binary Search</strong> – Searches efficiently by repeatedly dividing the sorted data into halves.</li>
+</ul>
+
+<hr>
+
 <h2>📎 References & Resources</h2>
 <ul>
   <li><strong>Loiane Groner:</strong> <a href="https://www.youtube.com/playlist?list=PLGxZ4Rq3BOBrgumpzz-l8kFMw2DLERdxi" target="_blank">Java Data Structures and Algorithms Course</a></li>
