@@ -14,6 +14,17 @@
 
 <hr>
 
+<h2>🔃 Implemented Sorting Algorithms</h2>
+<ul>
+  <li><strong>Selection Sort</strong> – Repeatedly selects the smallest element and places it in its correct position in the array.</li>
+  <li><strong>Bubble Sort</strong> – Compares adjacent elements and swaps them until the list is fully sorted.</li>
+  <li><strong>Insertion Sort</strong> – Builds the sorted list gradually by inserting each element into its correct position.</li>
+  <li><strong>Merge Sort</strong> – Divides the array into smaller parts, sorts them, and merges them back together.</li>
+  <li><strong>Quick Sort</strong> – Selects a pivot element, partitions the array, and recursively sorts the subarrays.</li>
+</ul>
+
+<hr>
+
 <h2>🔍 Implemented Search Algorithms</h2>
 <ul>
   <li><strong>Sequential Search</strong> – Iterates through the data one element at a time until the target is found.</li>
