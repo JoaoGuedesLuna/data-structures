@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  *
  * @author João Guedes
  */
-class ArraysTests {
+class ArraysTest {
     @Test
     void constructor_ShouldThrowAssertionError() throws Exception {
         Constructor<Arrays> constructor = Arrays.class.getDeclaredConstructor();
