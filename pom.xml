@@ -60,6 +60,7 @@
                 <configuration>
                     <excludes>
                         <exclude>dev/guedes/datastructures/*.class</exclude>
+                        <exclude>dev/guedes/datastructures/util/collection/internal/nodes/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
