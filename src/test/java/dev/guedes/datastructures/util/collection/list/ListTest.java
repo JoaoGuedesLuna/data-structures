@@ -1,6 +1,8 @@
 package dev.guedes.datastructures.util.collection.list;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -128,6 +130,13 @@ abstract class ListTest {
     }
 
     @Test
+    void remove_ShouldReturnFalse_WhenListIsEmpty() {
+        List<Integer> list = createList();
+
+        assertFalse(list.remove(Integer.valueOf(1)));
+    }
+
+    @Test
     void remove_ShouldReturnFalse_WhenElementDoesNotExist() {
         List<Integer> list = createList();
 
@@ -137,16 +146,49 @@ abstract class ListTest {
     }
 
     @Test
-    void remove_ShouldRemoveFirstOccurrence_WhenElementExists() {
+    void remove_ShouldRemoveElement_WhenListHasSingleElement() {
+        List<Integer> list = createList();
+
+        list.add(1);
+
+        boolean removed = list.remove(Integer.valueOf(1));
+
+        assertTrue(removed);
+        assertTrue(list.isEmpty());
+        assertEquals("[]", list.toString());
+    }
+
+    @ParameterizedTest()
+    @CsvSource({"1, '[2, 3]'", "2, '[1, 3]'", "3, '[1, 2]'"})
+    void remove_ShouldRemoveElement_WhenElementExists(int element, String expectedList) {
         List<Integer> list = createList();
 
         list.add(1);
         list.add(2);
-        list.add(1);
+        list.add(3);
 
-        list.remove(Integer.valueOf(1));
+        boolean removed = list.remove(Integer.valueOf(element));
 
-        assertEquals("[2, 1]", list.toString());
+        assertTrue(removed);
+        assertEquals(expectedList, list.toString());
+    }
+
+    @Test
+    void remove_ShouldRemoveAllElements_FromEndUntilListIsEmpty() {
+        List<Integer> list = createList();
+
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+
+        for (int i = 9; i >= 0; i--) {
+            int removed = list.remove(list.size() - 1);
+            assertEquals(i, removed);
+        }
+
+        assertTrue(list.isEmpty());
+        assertEquals(0, list.size());
+        assertEquals("[]", list.toString());
     }
 
     @Test
@@ -159,46 +201,19 @@ abstract class ListTest {
         assertThrows(IndexOutOfBoundsException.class, () -> createList().remove(1));
     }
 
-    @Test
-    void removeByIndex_ShouldRemoveFirstElement_WhenIndexIsZero() {
+    @ParameterizedTest()
+    @CsvSource({"0, 1, '[2, 3]'", "1, 2, '[1, 3]'", "2, 3, '[1, 2]'"})
+    void removeByIndex_ShouldRemoveCorrectElement(int index, int expectedRemoved, String expectedList) {
         List<Integer> list = createList();
 
         list.add(1);
         list.add(2);
         list.add(3);
 
-        int removed = list.remove(0);
+        int removed = list.remove(index);
 
-        assertEquals(1, removed);
-        assertEquals("[2, 3]", list.toString());
-    }
-
-    @Test
-    void removeByIndex_ShouldRemoveMiddleElement_WhenIndexIsMiddle() {
-        List<Integer> list = createList();
-
-        list.add(1);
-        list.add(2);
-        list.add(3);
-
-        int removed = list.remove(1);
-
-        assertEquals(2, removed);
-        assertEquals("[1, 3]", list.toString());
-    }
-
-    @Test
-    void removeByIndex_ShouldRemoveLastElement_WhenIndexIsLast() {
-        List<Integer> list = createList();
-
-        list.add(1);
-        list.add(2);
-        list.add(3);
-
-        int removed = list.remove(2);
-
-        assertEquals(3, removed);
-        assertEquals("[1, 2]", list.toString());
+        assertEquals(expectedRemoved, removed);
+        assertEquals(expectedList, list.toString());
     }
 
     @Test
@@ -211,13 +226,25 @@ abstract class ListTest {
         assertThrows(IndexOutOfBoundsException.class, () -> createList().get(1));
     }
 
-    @Test
-    void get_ShouldReturnElement_WhenIndexIsValid() {
+    @ParameterizedTest()
+    @CsvSource({"0, 1", "1, 2", "2, 3"})
+    void get_ShouldReturnCorrectElement(int index, int expectedValue) {
         List<Integer> list = createList();
 
         list.add(1);
+        list.add(2);
+        list.add(3);
 
-        assertEquals(1, list.get(0));
+        assertEquals(expectedValue, list.get(index));
+    }
+
+    @Test
+    void get_ShouldTraverseFromEnd_WhenIndexIsInSecondHalf() {
+        List<Integer> list = createList();
+
+        for (int i = 0; i < 6; i++) list.add(i);
+
+        assertEquals(4, list.get(4));
     }
 
     @Test
@@ -231,48 +258,57 @@ abstract class ListTest {
     }
 
     @Test
-    void set_ShouldReplaceElement_WhenIndexIsValid() {
+    void set_ShouldReplaceFirstElement_WhenIndexIsZero() {
         List<Integer> list = createList();
 
-        list.add(1);
+        list.add(0, 1);
+        list.add(2);
+        list.add(3);
 
-        int old = list.set(0, 2);
+        int old = list.set(0, 10);
 
         assertEquals(1, old);
-        assertEquals("[2]", list.toString());
+        assertEquals("[10, 2, 3]", list.toString());
     }
 
     @Test
-    void indexOf_ShouldReturnZero_WhenElementIsAtBeginning() {
+    void set_ShouldReplaceMiddleElement_WhenIndexIsMiddle() {
         List<Integer> list = createList();
 
         list.add(1);
         list.add(2);
         list.add(3);
 
-        assertEquals(0, list.indexOf(1));
+        int old = list.set(1, 20);
+
+        assertEquals(2, old);
+        assertEquals("[1, 20, 3]", list.toString());
     }
 
     @Test
-    void indexOf_ShouldReturnMiddleIndex_WhenElementIsInMiddle() {
+    void set_ShouldReplaceLastElement_WhenIndexIsLast() {
         List<Integer> list = createList();
 
         list.add(1);
         list.add(2);
         list.add(3);
 
-        assertEquals(1, list.indexOf(2));
+        int old = list.set(2, 30);
+
+        assertEquals(3, old);
+        assertEquals("[1, 2, 30]", list.toString());
     }
 
-    @Test
-    void indexOf_ShouldReturnLastIndex_WhenElementIsAtEnd() {
+    @ParameterizedTest
+    @CsvSource({"1, 0", "2, 1", "3, 2"})
+    void indexOf_ShouldReturnCorrectIndex(int element, int expectedIndex) {
         List<Integer> list = createList();
 
         list.add(1);
         list.add(2);
         list.add(3);
 
-        assertEquals(2, list.indexOf(3));
+        assertEquals(expectedIndex, list.indexOf(element));
     }
 
     @Test
@@ -292,37 +328,16 @@ abstract class ListTest {
         assertEquals(2, list.lastIndexOf(1));
     }
 
-    @Test
-    void lastIndexOf_ShouldReturnLastIndex_WhenElementIsAtEnd() {
+    @ParameterizedTest
+    @CsvSource({"1, 0","2, 1", "3, 2"})
+    void lastIndexOf_ShouldReturnCorrectIndex(int element, int expectedIndex) {
         List<Integer> list = createList();
 
         list.add(1);
         list.add(2);
         list.add(3);
 
-        assertEquals(2, list.lastIndexOf(3));
-    }
-
-    @Test
-    void lastIndexOf_ShouldReturnMiddleIndex_WhenElementIsInMiddle() {
-        List<Integer> list = createList();
-
-        list.add(1);
-        list.add(2);
-        list.add(3);
-
-        assertEquals(1, list.lastIndexOf(2));
-    }
-
-    @Test
-    void lastIndexOf_ShouldReturnZero_WhenElementIsAtBeginning() {
-        List<Integer> list = createList();
-
-        list.add(1);
-        list.add(2);
-        list.add(3);
-
-        assertEquals(0, list.lastIndexOf(1));
+        assertEquals(expectedIndex, list.lastIndexOf(element));
     }
 
     @Test
