@@ -169,8 +169,9 @@ public class ArrayList<E> implements List<E> {
      * while ensuring it does not shrink below the initial capacity.
      */
     private void shrinkCapacity() {
-        if (elements.length > initialCapacity && elements.length > size * SHRINK_THRESHOLD_FACTOR) {
-            resizeArray(elements.length / 2);
+        int newCapacity = (int) Math.ceil(size * SHRINK_THRESHOLD_FACTOR);
+        if (elements.length > initialCapacity && elements.length > newCapacity) {
+            resizeArray(newCapacity);
         }
     }
 
