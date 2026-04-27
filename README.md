@@ -17,6 +17,8 @@
 <h2>🎲 Implemented Data Structures</h2>
 <ul>
   <li><strong>ArrayList</strong> – A dynamic array that resizes automatically, allowing fast access by index and efficient iteration.</li>
+  <li><strong>SinglyLinkedList</strong> – A sequence of nodes where each element points to the next, enabling flexible insertion and removal.</li>
+  <li><strong>DoublyLinkedList</strong> –  A linked structure where each node connects to both previous and next elements, allowing bidirectional traversal.</li>
 </ul>
 
 <hr>
