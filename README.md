@@ -19,6 +19,8 @@
   <li><strong>ArrayList</strong> – A dynamic array that resizes automatically, allowing fast access by index and efficient iteration.</li>
   <li><strong>SinglyLinkedList</strong> – A sequence of nodes where each element points to the next, enabling flexible insertion and removal.</li>
   <li><strong>DoublyLinkedList</strong> –  A linked structure where each node connects to both previous and next elements, allowing bidirectional traversal.</li>
+  <li><strong>ArrayStack</strong> – A stack implemented with an array, following the LIFO principle (last element added is the first removed).</li>
+  <li><strong>LinkedStack</strong> – A stack built with linked nodes, allowing dynamic size without fixed capacity limits.</li>
 </ul>
 
 <hr>
