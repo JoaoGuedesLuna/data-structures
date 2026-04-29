@@ -21,6 +21,10 @@
   <li><strong>DoublyLinkedList</strong> –  A linked structure where each node connects to both previous and next elements, allowing bidirectional traversal.</li>
   <li><strong>ArrayStack</strong> – A stack implemented with an array, following the LIFO principle (last element added is the first removed).</li>
   <li><strong>LinkedStack</strong> – A stack built with linked nodes, allowing dynamic size without fixed capacity limits.</li>
+  <li><strong>ArrayQueue</strong> – A queue implemented with an array, following the FIFO principle (first element added is the first removed).</li>
+  <li><strong>LinkedQueue</strong> – A queue based on linked nodes, enabling efficient insertion and removal without resizing.</li>
+  <li><strong>PriorityQueue</strong> – A queue where elements are processed based on priority instead of insertion order.</li>
+  <li><strong>CircularQueue</strong> – A queue that wraps around itself, reusing empty spaces to optimize memory usage.</li>
 </ul>
 
 <hr>
