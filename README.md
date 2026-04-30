@@ -25,6 +25,9 @@
   <li><strong>LinkedQueue</strong> – A queue based on linked nodes, enabling efficient insertion and removal without resizing.</li>
   <li><strong>PriorityQueue</strong> – A queue where elements are processed based on priority instead of insertion order.</li>
   <li><strong>CircularQueue</strong> – A queue that wraps around itself, reusing empty spaces to optimize memory usage.</li>
+  <li><strong>ArraySet</strong> – A collection of unique elements stored in an array, preventing duplicates.</li>
+  <li><strong>LinkedSet</strong> – A set implemented with a linked structure, ensuring unique elements with flexible insertion.</li>
+  <li><strong>HashSet</strong> – A structure that stores unique elements using hashing, providing fast average-time operations.</li>
 </ul>
 
 <hr>
