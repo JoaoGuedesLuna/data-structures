@@ -28,6 +28,7 @@
   <li><strong>ArraySet</strong> – A collection of unique elements stored in an array, preventing duplicates.</li>
   <li><strong>LinkedSet</strong> – A set implemented with a linked structure, ensuring unique elements with flexible insertion.</li>
   <li><strong>HashSet</strong> – A structure that stores unique elements using hashing, providing fast average-time operations.</li>
+  <li><strong>HashTable</strong> – A key-value data structure that uses hashing to store and retrieve data efficiently.</li>
 </ul>
 
 <hr>
