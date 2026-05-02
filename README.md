@@ -29,6 +29,8 @@
   <li><strong>LinkedSet</strong> – A set implemented with a linked structure, ensuring unique elements with flexible insertion.</li>
   <li><strong>HashSet</strong> – A structure that stores unique elements using hashing, providing fast average-time operations.</li>
   <li><strong>HashTable</strong> – A key-value data structure that uses hashing to store and retrieve data efficiently.</li>
+  <li><strong>BinarySearchTree</strong> – A tree structure where elements are ordered, with smaller values on the left and larger on the right.</li>
+  <li><strong>AVLTree</strong> – A self-balancing binary search tree that maintains height balance to ensure fast operations.</li>
 </ul>
 
 <hr>
