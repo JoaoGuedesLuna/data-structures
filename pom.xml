@@ -6,7 +6,7 @@
 
     <groupId>dev.guedes</groupId>
     <artifactId>data-structures</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>data-structures</name>
     <description>A Java-based learning project featuring custom implementations of essential data structures and algorithms.</description>
