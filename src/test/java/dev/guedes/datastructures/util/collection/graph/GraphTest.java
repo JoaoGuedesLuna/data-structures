@@ -346,6 +346,24 @@ abstract class GraphTest {
     }
 
     @Test
+    void removeEdge_ShouldRemoveBothDirections_WhenGraphIsUndirected() {
+        Graph<Integer> graph = createGraphUndirected();
+
+        graph.addVertex(1);
+        graph.addVertex(2);
+
+        graph.addEdge(1, 2);
+
+        assertTrue(graph.containsEdge(1, 2));
+        assertTrue(graph.containsEdge(2, 1));
+
+        graph.removeEdge(1, 2);
+
+        assertFalse(graph.containsEdge(1, 2));
+        assertFalse(graph.containsEdge(2, 1));
+    }
+
+    @Test
     void containsEdge_ShouldThrowException_WhenVerticesAreNull() {
         Graph<Integer> graph = createGraphDirected();
 
