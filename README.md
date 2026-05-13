@@ -12,6 +12,82 @@
   While Java provides many built-in utilities, I’ve chosen to implement classic structures manually to gain a deeper understanding of how they work internally.
 </p>
 
+<hr>
+
+<h2>🎲 Implemented Data Structures</h2>
+<ul>
+  <li><strong>ArrayList</strong> – A dynamic array that resizes automatically, allowing fast access by index and efficient iteration.</li>
+  <li><strong>SinglyLinkedList</strong> – A sequence of nodes where each element points to the next, enabling flexible insertion and removal.</li>
+  <li><strong>DoublyLinkedList</strong> –  A linked structure where each node connects to both previous and next elements, allowing bidirectional traversal.</li>
+  <li><strong>ArrayStack</strong> – A stack implemented with an array, following the LIFO principle (last element added is the first removed).</li>
+  <li><strong>LinkedStack</strong> – A stack built with linked nodes, allowing dynamic size without fixed capacity limits.</li>
+  <li><strong>ArrayQueue</strong> – A queue implemented with an array, following the FIFO principle (first element added is the first removed).</li>
+  <li><strong>LinkedQueue</strong> – A queue based on linked nodes, enabling efficient insertion and removal without resizing.</li>
+  <li><strong>PriorityQueue</strong> – A queue where elements are processed based on priority instead of insertion order.</li>
+  <li><strong>CircularQueue</strong> – A queue that wraps around itself, reusing empty spaces to optimize memory usage.</li>
+  <li><strong>ArraySet</strong> – A collection of unique elements stored in an array, preventing duplicates.</li>
+  <li><strong>LinkedSet</strong> – A set implemented with a linked structure, ensuring unique elements with flexible insertion.</li>
+  <li><strong>HashSet</strong> – A structure that stores unique elements using hashing, providing fast average-time operations.</li>
+  <li><strong>HashTable</strong> – A key-value data structure that uses hashing to store and retrieve data efficiently.</li>
+  <li><strong>BinarySearchTree</strong> – A tree structure where elements are ordered, with smaller values on the left and larger on the right.</li>
+  <li><strong>AVLTree</strong> – A self-balancing binary search tree that maintains height balance to ensure fast operations.</li>
+  <li><strong>AdjacencyMatrix</strong> – A graph representation using a matrix, where connections are stored in a 2D structure.</li>
+  <li><strong>AdjacencyList</strong> –  A graph representation where each node stores a list of its adjacent connections.</li>
+</ul>
+
+<hr>
+
+<h2>🔃 Implemented Sorting Algorithms</h2>
+<ul>
+  <li><strong>Selection Sort</strong> – Repeatedly selects the smallest element and places it in its correct position in the array.</li>
+  <li><strong>Bubble Sort</strong> – Compares adjacent elements and swaps them until the list is fully sorted.</li>
+  <li><strong>Insertion Sort</strong> – Builds the sorted list gradually by inserting each element into its correct position.</li>
+  <li><strong>Merge Sort</strong> – Divides the array into smaller parts, sorts them, and merges them back together.</li>
+  <li><strong>Quick Sort</strong> – Selects a pivot element, partitions the array, and recursively sorts the subarrays.</li>
+</ul>
+
+<hr>
+
+<h2>🔍 Implemented Search Algorithms</h2>
+<ul>
+  <li><strong>Sequential Search</strong> – Iterates through the data one element at a time until the target is found.</li>
+  <li><strong>Binary Search</strong> – Searches efficiently by repeatedly dividing the sorted data into halves.</li>
+</ul>
+
+<hr>
+
+<h2>🧪 Unit Tests & Code Coverage</h2>
+
+<p style="text-align: justify;">
+  All unit tests for this project were implemented using <strong>JUnit</strong>, ensuring the correctness and reliability of each data structure and algorithm implementation.
+</p>
+
+<p style="text-align: justify;">
+  Code coverage analysis was performed with <strong>JaCoCo</strong>, allowing verification of how much of the codebase is exercised by the automated tests.
+</p>
+
+<p style="text-align: justify;">
+  To generate the report, run:
+</p>
+
+<pre><code>mvn clean verify</code></pre>
+
+<p style="text-align: justify;">
+  After running the tests, the JaCoCo report can be found at:
+</p>
+
+<pre><code>target/site/jacoco/index.html</code></pre>
+
+<p style="text-align: justify;">
+  Then open the generated HTML file in your browser to explore detailed coverage metrics.
+</p>
+
+<h3>📊 Coverage Report</h3>
+
+<img width="100%" src="https://imgur.com/wvZ8wmi.png" alt="Coverage Report">
+
+<hr>
+
 <h2>📎 References & Resources</h2>
 <ul>
   <li><strong>Loiane Groner:</strong> <a href="https://www.youtube.com/playlist?list=PLGxZ4Rq3BOBrgumpzz-l8kFMw2DLERdxi" target="_blank">Java Data Structures and Algorithms Course</a></li>
