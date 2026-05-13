@@ -31,6 +31,8 @@
   <li><strong>HashTable</strong> – A key-value data structure that uses hashing to store and retrieve data efficiently.</li>
   <li><strong>BinarySearchTree</strong> – A tree structure where elements are ordered, with smaller values on the left and larger on the right.</li>
   <li><strong>AVLTree</strong> – A self-balancing binary search tree that maintains height balance to ensure fast operations.</li>
+  <li><strong>AdjacencyMatrix</strong> – A graph representation using a matrix, where connections are stored in a 2D structure.</li>
+  <li><strong>AdjacencyList</strong> –  A graph representation where each node stores a list of its adjacent connections.</li>
 </ul>
 
 <hr>
