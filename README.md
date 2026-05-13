@@ -56,6 +56,38 @@
 
 <hr>
 
+<h2>🧪 Unit Tests & Code Coverage</h2>
+
+<p style="text-align: justify;">
+  All unit tests for this project were implemented using <strong>JUnit</strong>, ensuring the correctness and reliability of each data structure and algorithm implementation.
+</p>
+
+<p style="text-align: justify;">
+  Code coverage analysis was performed with <strong>JaCoCo</strong>, allowing verification of how much of the codebase is exercised by the automated tests.
+</p>
+
+<p style="text-align: justify;">
+  To generate the report, run:
+</p>
+
+<pre><code>mvn clean verify</code></pre>
+
+<p style="text-align: justify;">
+  After running the tests, the JaCoCo report can be found at:
+</p>
+
+<pre><code>target/site/jacoco/index.html</code></pre>
+
+<p style="text-align: justify;">
+  Then open the generated HTML file in your browser to explore detailed coverage metrics.
+</p>
+
+<h3>📊 Coverage Report</h3>
+
+<img width="100%" src="https://imgur.com/wvZ8wmi.png" alt="Coverage Report">
+
+<hr>
+
 <h2>📎 References & Resources</h2>
 <ul>
   <li><strong>Loiane Groner:</strong> <a href="https://www.youtube.com/playlist?list=PLGxZ4Rq3BOBrgumpzz-l8kFMw2DLERdxi" target="_blank">Java Data Structures and Algorithms Course</a></li>
