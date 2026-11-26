@@ -1,2 +1,4 @@
 * linguist-detectable=false
 *.java linguist-detectable=true
+
+* text=auto eol=lf

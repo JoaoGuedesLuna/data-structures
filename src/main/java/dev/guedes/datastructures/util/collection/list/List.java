@@ -23,7 +23,7 @@ public interface List<E> extends Collection<E> {
      *
      * @param index the index at which the element is to be inserted
      * @param element the element to insert
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index > size())
+     * @throws IndexOutOfBoundsException if the index is out of range {@code index < 0 || index > size()}
      */
     void add(int index, E element);
 
@@ -33,7 +33,7 @@ public interface List<E> extends Collection<E> {
      *
      * @param index the index of the element to be removed
      * @return the element that was removed from the list
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size())
+     * @throws IndexOutOfBoundsException if the index is out of range {@code index < 0 || index >= size()}
      */
     E remove(int index);
 
@@ -42,7 +42,7 @@ public interface List<E> extends Collection<E> {
      *
      * @param index the index of the element to return
      * @return the element at the specified position
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size())
+     * @throws IndexOutOfBoundsException if the index is out of range {@code index < 0 || index >= size()}
      */
     E get(int index);
 
@@ -52,7 +52,7 @@ public interface List<E> extends Collection<E> {
      * @param index the index of the element to replace
      * @param element the element to be stored at the specified position
      * @return the element previously at the specified position
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size())
+     * @throws IndexOutOfBoundsException if the index is out of range {@code index < 0 || index >= size()}
      */
     E set(int index, E element);
 

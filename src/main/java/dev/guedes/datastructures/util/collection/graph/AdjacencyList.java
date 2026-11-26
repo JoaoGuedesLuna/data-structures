@@ -351,11 +351,15 @@ public class AdjacencyList<E> implements Graph<E> {
      * @throws IllegalArgumentException if collection type is not supported
      */
     private E removeNextElement(Collection<E> collection) {
-        return switch (collection) {
-            case Stack<E> stack -> stack.pop();
-            case Queue<E> queue -> queue.poll();
-            default -> throw new IllegalArgumentException("Unsupported collection type: " + collection.getClass());
-        };
+        if (collection instanceof Stack<?> stack) {
+            @SuppressWarnings("unchecked")
+            E element = (E) stack.pop();
+            return element;
+        }
+        if (collection instanceof Queue<E> queue) {
+            return queue.poll();
+        }
+        throw new IllegalArgumentException("Unsupported collection type: " + collection.getClass());
     }
 
     /**
